@@ -110,11 +110,8 @@ nav {
 }
 
 #btnHamburger-container {
+   display: flex;
    margin-right: 25px;
-}
-
-#btnHamburger {
-
 }
 
 /* span elements that make Hamburger menu */
@@ -132,10 +129,11 @@ nav {
    margin-bottom: 6px;
 }
 
+/* Home Page Styles Start*/
+
 #main {
    display: flex;
    flex-direction: column;
-
 }
 
 #hero-section {
@@ -294,4 +292,95 @@ nav {
    justify-content: space-evenly;
    width: 100%;
    margin-bottom: 20px;
+}
+
+/* Homepage Styles End */
+
+/* Gallery Styles Start */
+
+#cart-icon {
+   margin-right: 26px;
+   cursor: pointer;
+}
+
+#gallery-heading {
+   margin-top: 26px;
+   font-size: 16px;
+   font-family: Arial;
+   font-weight: 600;
+   text-align: center;
+   color: var(--enduranceWhite);
+}
+
+.view-cart-button {
+   width: 107px;
+   height: 40px;
+   font-family: Calibri;
+   font-weight: 700;
+   color: var(--enduranceWhite);
+   letter-spacing: 1px;
+   border: none;
+   border-radius: 20px;
+   background: linear-gradient(-3deg, var(--briskBlue), var(--aquaPulse));
+   box-shadow: 0px 1px 3px 1px black;
+   cursor: pointer;
+}
+
+#gallery-container {
+   margin-top: 36px;
+   margin-top: 36px;
+   display: flex;
+   justify-content: center;
+}
+
+.gallery-product {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top: 8px;
+   background-color: var(--aquaPulse);
+   padding-top: 8px;
+   width: 95%;
+   
+}
+
+.gallery-1 {
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.gallery-product-title {
+   margin-top: 0;
+   font-family: Arial;
+   font-size: 20px;
+   text-align: center;
+   color: var(--briskBlue);
+}
+
+.gallery-product-image {
+   width: 100%;
+   height: auto;
+}
+
+.gallery-product-description {
+   margin-left: 20px;
+   margin-right: 20px;
+   font-family: Comfortaa, Arial;
+   font-size: 15px;
+   text-align: center;
+   color: var(--briskBlue);
+
+}
+
+.add-cart-button {
+   width: 107px;
+   height: 22px;
+   margin-bottom: 20px;
+   border-radius: 20px;
+   border:none;
+   background: radial-gradient(ellipse at center, var(--briskBlue), var(--aquaPulse));
+   color: var(--enduranceWhite);
+   box-shadow: 0px 1px 3px 1px black;
+   cursor: pointer;
 }
