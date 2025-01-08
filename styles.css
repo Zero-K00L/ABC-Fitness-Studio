@@ -25,44 +25,8 @@ body {
    width: 100%;
 }
 
-
-
-.header-menu {
-   margin-left: 72%;
-   padding-right: 0;
-   position: fixed;
-   left: 8px;
-   top: 25px;
-   z-index: 1;
-}
-
-/* span elements that make Hamburger menu */
-
-.header-menu-container {
-   z-index: 10;
-}
-
-.header-menu > span {    
-   display: block;
-   width: 32px;
-   height: 2px;
-   background-color: var(--enduranceWhite);
-   transition: all 300ms ease-in-out;
-   transform-origin: 13% 61.5%;
-}
-
-.header-menu > span:not(:last-child) {
-   margin-bottom: 6px;
-}
-
-
-
 nav {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
    margin-bottom: 25px;
-
 }
 
 #page-title {
@@ -135,13 +99,37 @@ nav {
 
 #logo-container {
    display: flex;
-   justify-content: flex-start;
+   justify-content: space-between;
+   align-items: center;
    border-bottom: 1px solid var(--limeLift);
 }
 
 .header-logo {
    width: 13%;
-   margin: 9px 0px 9px 50px
+   margin-left: 25px;
+}
+
+#btnHamburger-container {
+   margin-right: 25px;
+}
+
+#btnHamburger {
+
+}
+
+/* span elements that make Hamburger menu */
+
+#btnHamburger > span {    
+   display: block;
+   width: 32px;
+   height: 2px;
+   background-color: var(--enduranceWhite);
+   transition: all 300ms ease-in-out;
+   transform-origin: 13% 61.5%;
+}
+
+#btnHamburger > span:not(:last-child) {
+   margin-bottom: 6px;
 }
 
 #main {
@@ -151,12 +139,12 @@ nav {
 }
 
 #hero-section {
-   width: 414px;
-   height: 281px;
-   background-image: url(/images/Client2_IndividualKickboxing.png);
-   background-size: cover;  /* Ensures the image covers the entire element */
-   background-position: center;  /* Centers the image */
-   background-repeat: no-repeat;  /* Prevents the image from repeating */
+   width: 100%;
+   height: auto;
+}
+
+#hero-img {
+   width: 100%;
 }
 
 #promotions-header {
@@ -181,9 +169,129 @@ nav {
    justify-content: space-between;
 }
 
+.promotion-link {
+   text-decoration: none;
+}
+
 .promotion-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 100px;       
    height: 100px;      
-   background-color: #3498db; 
+   background-color: var(--intensityIndigo); 
+   border: 1px solid var(--limeLift);
    border-radius: 50%; 
+}
+
+.promo-1 {
+   
+   background: linear-gradient(to right, var(--aquaPulse), var(--briskBlue), var(--limeLift));
+}
+
+.promo-2 {
+   background: linear-gradient(to right, var(--limeLift), var(--briskBlue), var(--aquaPulse), var(--limeLift));
+}
+
+.promo-3 {
+
+   background: linear-gradient(to left, var(--aquaPulse), var(--briskBlue), var(--limeLift));
+}
+
+.promo-text {
+   font-family: Calibri;
+   text-align: center;
+   color: var(--enduranceWhite);
+}
+
+#training-reasons-section {
+   margin-top: 46px;
+   background-color: var(--enduranceWhite);
+}
+
+.training-header {
+   font-family: Arial;
+   font-weight: 700;
+   color: var(--briskBlue);
+   text-align: center;
+}
+
+#list-reasons {
+   list-style-type: none;
+   margin-right: 40px;
+}
+
+.reason {
+   margin-bottom: 12px;
+   padding: 5px 0px 5px 17px;
+   font-family: Comfortaa;
+   background-color: var(--aquaPulse);
+   border: 1px solid var(--briskBlue);
+}
+
+.promotional-image {
+   width: 100%;
+}
+
+.product-service-header {
+   font-size: 25px;
+   font-family: Arial;
+   text-align: center;
+   color: var(--enduranceWhite);
+}
+
+#products-services-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(149px, 1fr));
+   grid-gap: 20px;
+   padding: 20px;
+}
+
+.product-image {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+#footer {
+   padding-top: 1px;
+   margin-top: 28px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(to right, var(--briskBlue), var(--aquaPulse));
+}
+
+.subscribe-header {
+   margin-top: 24px;
+   font-size: 20px;
+   font-family: Calibri, Arial;
+   font-weight: 700;
+   color: var(--enduranceWhite);
+   text-align: center;
+}
+
+#email-input{
+   width: 71%;
+   height: 32px;
+   margin-bottom: 25px;
+}
+
+#subscribe-button {
+   width: 71%;
+   height: 32px;
+   margin-bottom: 40px;
+   cursor: pointer;
+   color: var(--briskBlue);
+   font-family: Arial;
+   font-weight: 600;
+   letter-spacing: 2px;
+}
+
+#social-container {
+   display: flex;
+   justify-content: space-evenly;
+   width: 100%;
+   margin-bottom: 20px;
 }

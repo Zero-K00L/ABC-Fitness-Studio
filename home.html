@@ -3,12 +3,14 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="styles.css">
       <title>ABC Fitness Studio Home Page</title>
    </head>
    
    <body>
-
       <header id="header">
          <!-- Mobile Navigation Menu-->
          <div id="overlay" class="overlay has-fade">
@@ -19,100 +21,110 @@
                <a class="community-mobile-header" href="community.html">Community</a>
             </div>
          </div>
-
          <div id="overlay2" class="overlay-2 has-fade2"></div>
          <nav>
-
             <div id="logo-container">
                <image class="header-logo" src="/images/logo2.png" alt="ABC Fitness Logo"/>
+               <div id="btnHamburger-container">
+                  <a href="#" id="btnHamburger" class="header-menu">
+                     <span class="hamburger-menu"></span>
+                     <span class="hamburger-menu"></span>
+                     <span class="hamburger-menu"></span>
+                   </a>
+               </div>
             </div>
-
             <h1 id="page-title">ABC Fitness Studio</h1>
-
-            <div class="header-menu-container">
-               <a href="#" id="btnHamburger" class="header-menu">
-                 <span class="hamburger-menu"></span>
-                 <span class="hamburger-menu"></span>
-                 <span class="hamburger-menu"></span>
-               </a>
-            </div>
-
-
-            
-            
          </nav>
 
          <!-- Desktop Navigation Menu-->
           
 
       </header>
-
       <main id="main">
          <hero id="hero-section">
-            <!-- <image src="/images/Client2_IndividualKickboxing.png" alt="group of people kickboxing"/> -->
+            <image id="hero-img" src="/images/Client2_IndividualKickboxing.png" alt="group of people kickboxing"/>
          </hero>
-
-
-
          <section id="promotions-section">
             <div class="promotions-header-container">
                <h2 id="promotions-header">Current Promotions</h2>
             </div>
-
             <div id="promotions-paragraph-container">
-               <p id="promotions-paragraph">Check out our latest deals and promotions! Click on the promo to learn more.</p>
+               <p id="promotions-paragraph">Check out our latest deals and promotions! Click the link to learn more.</p>
             </div>
-            
-
             <div class="promotion-window-container">
-               <div class="promotion-container promo-1"></div>
-               <div class="promotion-container promo-2"></div>
-               <div class="promotion-container promo-3"></div>
+               <a class="promotion-link" href="#">
+                  <div class="promotion-container promo-1">
+                     <p class="promo-text">20% off your first month!</p>
+                  </div>
+               </a>
+               <a class="promotion-link" href="#">
+                  <div class="promotion-container promo-2">
+                     <p class="promo-text">Free class when you refer someone!</p>
+                  </div>
+               </a>
+               <a class="promotion-link" href="#">
+                  <div class="promotion-container promo-3">
+                     <p class="promo-text">10% off select accessories!</p>
+                  </div>
+               </a>
             </div>
          </section>
-
          <section id="training-reasons-section">
             <h3 class="section-header training-header">Why should you train here?</h3>
             <div class="reasons-container">
-               <ol>
-                  <li class="reason-1">Personalized Training Programs</li>
-                  <li class="reason-2">State-of-the-Art Equipment</li>
-                  <li class="reason-3">Expert Trainers</li>
-                  <li class="reason-4">Flexible Membership Options</li>
+               <ol id="list-reasons">
+                  <li class="reason reason-1">Personalized Training Programs</li>
+                  <li class="reason reason-2">State-of-the-Art Equipment</li>
+                  <li class="reason reason-3">Expert Trainers</li>
+                  <li class="reason reason-4">Flexible Membership Options</li>
                </ol>
             </div>
          </section>
-
          <div class="promotional-images-container">
-            <image src="/images/Client2_GroupKickboxing.png"/>
-            <image src="/images/Client2_GroupPilates.png"/>
+            <image class="promotional-image" src="/images/Client2_GroupKickboxing.png"/>
+            <image class="promotional-image" src="/images/Client2_GroupPilates.png"/>
          </div>
-
          <section id="products-services-section">
             <h3 class="section-header product-service-header">Shop by product or services</h3>
-            <div class="products-services-container">
-               <image src="/images/Client2_TeeShirt.png"/>
-               <image src="/images/Client2_WaterBottle.png"/>
-               <image src="/images/Client2_YogaMat.png"/>
-               <image src="/images/Client2_IndividualYoga.png"/>
-               <image src="/images/Client2_IndividualPilates.png"/>
-               <image src="/images/Client2_IndividualKickboxing.png"/>
+            <div id="products-services-container">
+               <a href="#">
+                  <image class="product-image" src="/images/Client2_TeeShirt.png"/>
+               </a>
+               <a href="#">
+                  <image class="product-image" src="/images/Client2_WaterBottle.png"/>
+               </a>
+               <a href="#">
+                  <image class="product-image" src="/images/Client2_YogaMat.png"/>
+               </a>
+               <a href="#">
+                  <image class="product-image" src="/images/Client2_IndividualYoga.png"/>
+               </a>
+               <a href="#">
+                  <image class="product-image" src="/images/Client2_IndividualPilates.png"/>
+               </a>
+               <a href="#">
+                  <image class="product-image" src="/images/Client2_GroupYoga.png"/>
+               </a>
             </div>
          </section>
-
-
       </main>
-
-      <footer>
-         <h3 class="section-header subscribe-header"></h3>
-         <input type="email"/>
-         <button type="button">Subscribe</button>
-
+      <footer id="footer">
+         <h3 class="section-header subscribe-header">Subscribe to our Newsletter</h3>
+         <input id="email-input" type="email" placeholder="  Email"/>
+         <button id="subscribe-button" type="submit" value="subscribe">Subscribe</button>
          <div id="social-container">
-            <image src="/images/youtube.svg"/>
-            <image src="/images/instagram.svg"/>
-            <image src="/images/X.svg"/>
-            <image src="/images/facebook.svg"/>
+            <a href="#">
+               <image src="/images/youtube.svg"/>
+            </a>
+            <a href="#">
+               <image src="/images/instagram.svg"/>
+            </a>
+            <a href="#">
+               <image src="/images/X.svg"/>
+            </a>
+            <a href="#">
+               <image src="/images/facebook.svg"/>
+            </a>
          </div>
       </footer>
    </body>
