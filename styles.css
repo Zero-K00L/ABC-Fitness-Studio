@@ -7,6 +7,7 @@
    --enduranceWhite: #FCFCFC;
 }
 
+
 html {
    font-size: 100%;
    box-sizing: border-box;
@@ -19,6 +20,23 @@ html {
 body {
    margin: 0;
    background-color: var(--briskBlue);
+}
+
+.button {
+   -webkit-tap-highlight-color: transparent;
+}
+
+.button:hover {
+   filter:contrast(2);
+}
+
+.button:active {
+   transform: translateY(1px);
+   box-shadow: 0px 0px 0px 0px black;
+}
+
+.button:focus {
+   outline: none;
 }
 
 #header {
@@ -34,8 +52,8 @@ nav {
    font-size: 30px;
    font-family: Arial;
    font-weight: 700;
-   color: var(--enduranceWhite);
    text-align: center;
+   color: var(--enduranceWhite);
 }
 
 /* overlay for hamburger menu */
@@ -154,12 +172,12 @@ nav {
 }
 
 #promotions-paragraph {
-   font-family: Calibri;
-   color: var(--aquaPulse);
    padding-left: 10px;
    padding-right: 10px;
+   font-family: Calibri;
    font-size: 20px;
    text-align: center;
+   color: var(--aquaPulse);
 }
 
 .promotion-window-container {
@@ -177,9 +195,9 @@ nav {
    align-items: center;
    width: 100px;       
    height: 100px;      
-   background-color: var(--intensityIndigo); 
    border: 1px solid var(--limeLift);
    border-radius: 50%; 
+   background-color: var(--intensityIndigo); 
 }
 
 .promo-1 { 
@@ -209,8 +227,8 @@ nav {
 .training-header {
    font-family: Arial;
    font-weight: 700;
-   color: var(--briskBlue);
    text-align: center;
+   color: var(--briskBlue);
 }
 
 #list-reasons {
@@ -222,8 +240,8 @@ nav {
    margin-bottom: 12px;
    padding: 5px 0px 5px 17px;
    font-family: Comfortaa;
-   background-color: var(--aquaPulse);
    border: 1px solid var(--briskBlue);
+   background-color: var(--aquaPulse);
 }
 
 .promotional-image {
@@ -251,12 +269,12 @@ nav {
 }
 
 #footer {
-   padding-top: 1px;
-   margin-top: 28px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   margin-top: 28px;
+   padding-top: 1px;
    background: linear-gradient(to right, var(--briskBlue), var(--aquaPulse));
 }
 
@@ -265,8 +283,8 @@ nav {
    font-size: 20px;
    font-family: Calibri, Arial;
    font-weight: 700;
-   color: var(--enduranceWhite);
    text-align: center;
+   color: var(--enduranceWhite);
 }
 
 #email-input{
@@ -279,11 +297,14 @@ nav {
    width: 71%;
    height: 32px;
    margin-bottom: 40px;
-   cursor: pointer;
-   color: var(--briskBlue);
    font-family: Arial;
    font-weight: 600;
    letter-spacing: 2px;
+   cursor: pointer;
+   color: var(--briskBlue);
+}
+
+.subscribe-btn-class {
    box-shadow: 0px 2px 3px 0px black;
 }
 
@@ -317,8 +338,8 @@ nav {
    height: 40px;
    font-family: Calibri;
    font-weight: 700;
-   color: var(--enduranceWhite);
    letter-spacing: 1px;
+   color: var(--enduranceWhite);
    border: none;
    border-radius: 20px;
    background: linear-gradient(-3deg, var(--briskBlue), var(--aquaPulse));
@@ -340,10 +361,9 @@ nav {
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   width: 95%;
    padding-top: 8px;
    background-color: var(--aquaPulse);
-   padding-top: 8px;
-   width: 95%;
    border-bottom: 2px solid var(--briskBlue);
    box-shadow: 0px 0px 3px 3px black;
 }
@@ -356,7 +376,7 @@ nav {
 .gallery-9 {
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
-   box-shadow: 0px 2px 3px 3px black;
+   box-shadow: 0px 0px 3px 3px black;
 }
 
 .gallery-product-title {
@@ -391,4 +411,116 @@ nav {
    color: var(--enduranceWhite);
    box-shadow: 0px 1px 3px 1px black;
    cursor: pointer;
+}
+
+/* Gallery Styles Start */
+
+/* About Us Styles Start */
+
+#aboutUs-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#aboutUs-header {
+   margin-top: 0;
+   font-family: Arial;
+   text-align: center;
+   color: var(--enduranceWhite);
+}
+
+#aboutUs-description-container {
+   width: 91%;
+   margin-bottom: 18px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px -4px var(--limeLift);
+}
+
+#aboutUs-description {
+   padding-left: 15px;
+   padding-right: 15px;
+   font-family: Comfortaa;
+   font-size: 15px;
+   color: var(--aquaPulse);
+}
+
+#business-hours-header {
+   font-family: Arial;
+   color: var(--enduranceWhite);
+   text-align: center;
+
+}
+
+#operations-table {
+   width: 100%;
+   margin-bottom: 26px;
+   border-collapse: collapse;
+}
+
+.operations-table-header, .operations-table-data {
+   padding: 8px;
+   font-family: Calibri;
+   text-align: left;
+   color: var(--enduranceWhite);
+   border: 1px solid var(--enduranceWhite);
+}
+
+.operations-table-header {
+   color: var(--briskBlue);
+   background-color: var(--enduranceWhite);
+}
+
+#contact-form {
+   display: flex;
+   flex-direction: column;
+   width: 89%;
+   margin: 0 auto;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0px 0px 11px -4px var(--aquaPulse);
+}
+
+#contact-section-header {
+   font-family: Arial;
+   text-align: center;
+   color: var(--enduranceWhite);
+   font-size: 20px;
+}
+
+.form-label {
+   display: block;
+   margin: 10px 0 5px;
+   font-family: Calibri;
+   font-weight: 700;
+   color: var(--enduranceWhite);
+}
+
+.form-input {
+   width: 100%;
+   padding: 8px;
+   margin-bottom: 15px;
+   border: 1px solid var(--aquaPulse);
+   border-radius: 5px;
+}
+
+#form-submit-button {
+   padding: 10px 15px;
+   border: none;
+   border-radius: 5px;
+   font-family: Calibri;
+   letter-spacing: 1px;
+   color: var(--enduranceWhite);
+   background-color: var(--intensityIndigo);
+   cursor: pointer;
+}
+
+.form-text-area {
+   margin-bottom: 25px;
+}
+
+.submit-btn {
+   margin-bottom: 20px;
+   box-shadow: 0px 1px 4px -2px var(--enduranceWhite);
 }

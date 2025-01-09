@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles.css">
+      <title>ABC Fitness Studio Home Page</title>
+   </head>
+   <body>
+      <header id="header">
+         <!-- Mobile Navigation Menu-->
+         <div id="overlay" class="overlay has-fade">
+            <div class="header-display">
+               <a class="home-mobile-header" href="home.html">Home</a>
+               <a class="galley-mobile-header" href="gallery.html">Gallery</a>
+               <a class="aboutUs-mobile-header" href="aboutUs.html">About Us</a>
+               <a class="community-mobile-header" href="community.html">Community</a>
+            </div>
+         </div>
+         <div id="overlay2" class="overlay-2 has-fade2"></div>
+         <nav>
+            <div id="logo-container">
+               <image class="header-logo" src="/images/logo2.png" alt="ABC Fitness Logo"/>
+               
+               <div id="btnHamburger-container">
+                  <a href="#" id="btnHamburger" class="header-menu">
+                     <span class="hamburger-menu"></span>
+                     <span class="hamburger-menu"></span>
+                     <span class="hamburger-menu"></span>
+                   </a>
+               </div>
+            </div>
+            <h1 id="page-title">ABC Fitness Studio</h1>
+         </nav>
+      </header>  
+      <main id="main">
+         <section id="aboutUs-section">
+            <h2 id="aboutUs-header">Learn more about us</h2>
+            <div id="aboutUs-description-container">
+               <p id="aboutUs-description">Here at ABC Fitness Studio we are a local fitness studio specializing in a diverse range of classes, including yoga, Pilates, and Zumba, all geared toward promoting a healthy and active lifestyle. With a commitment to well-being, we aim to provide this community with a welcoming space for physical and mental wellness. Additionally, we offer a selection of high-quality fitness and training equipment to support our clients’ fitness journeys. With our presence, we aspire to create a training space that embodies the values of balance, harmony, and active living. We welcome all local individuals seeking fitness and holistic health solutions. Our primary goal is to enhance and foster community connections, so come be apart of our community today! </p>
+            </div>
+         </section>
+         <section id="hours-op-section">
+            <div id="operations-container">
+               <h3 id="business-hours-header">Business Hours</h3>
+               <table id="operations-table">
+                  <tr>
+                    <th class="operations-table-header">Day</th>
+                    <th class="operations-table-header">Hours</th>
+                  </tr>
+                  <tr>
+                    <td class="operations-table-data">Monday–Friday</td>
+                    <td class="operations-table-data">6 a.m. to 8 p.m.</td>
+                  </tr>
+                  <tr>
+                    <td class="operations-table-data">Saturday</td>
+                    <td class="operations-table-data">8 a.m. to 6 p.m.</td>
+                  </tr>
+                  <tr>
+                    <td class="operations-table-data">Sunday</td>
+                    <td class="operations-table-data">Closed</td>
+                  </tr>
+                </table>
+            </div>
+         </section>
+         <section id="contact-section">
+            <h3 id="contact-section-header">Contact Us</h3>
+            <form id="contact-form" action="/submit-form" method="POST">
+               <label class="form-label" for="name">Name:</label>
+               <input class="form-input" type="text" id="name" name="name" required>
+               <label class="form-label" for="phone">Phone Number:</label>
+               <input class="form-input" type="tel" id="phone" name="phone" required>
+               <label class="form-label" for="email">Email:</label>
+               <input class="form-input" type="email" id="email" name="email" required>
+               <label class="form-label" for="message">Message:</label>
+               <textarea class="form-input form-text-area" id="message" name="message" rows="4" required></textarea>
+               <button id="form-submit-button" class="submit-btn button" type="submit">Submit</button>
+             </form>
+         </section>
+      </main>
+      <footer id="footer">
+         <h3 class="section-header subscribe-header">Subscribe to our Newsletter</h3>
+         <input id="email-input" type="email" placeholder="  Email"/>
+         <button id="subscribe-button" class="subscribe-btn-class button" type="submit" value="subscribe">Subscribe</button>
+         <div id="social-container">
+            <a href="#">
+               <image src="/images/youtube.svg"/>
+            </a>
+            <a href="#">
+               <image src="/images/instagram.svg"/>
+            </a>
+            <a href="#">
+               <image src="/images/X.svg"/>
+            </a>
+            <a href="#">
+               <image src="/images/facebook.svg"/>
+            </a>
+         </div>
+      </footer>
+   </body>      
+</html>
