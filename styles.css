@@ -524,3 +524,125 @@ nav {
    margin-bottom: 20px;
    box-shadow: 0px 1px 4px -2px var(--enduranceWhite);
 }
+
+#customer-highlights-header {
+   text-align: center;
+   color: var(--enduranceWhite);
+   font-family: Arial;
+}
+
+.customer-highlight-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-left: 12px;
+   padding-right: 12px;
+   margin: 0px 20px 20px 20px;
+   border-radius: 5px;
+   background: var(--intensityIndigo);
+   box-shadow: 0px 0px 4px 0px var(--limeLift);
+}
+
+.highlight-container-1 {
+   background: linear-gradient(to right, var(--intensityIndigo), var(--briskBlue));
+}
+
+.highlight-container-2 {
+   background: linear-gradient(to right, var(--intensityIndigo), var(--briskBlue));
+}
+
+.highlight-container-3 {
+   background: linear-gradient(to right, var(--intensityIndigo), var(--briskBlue));
+}
+
+.customer-highlight-name {
+   align-self: flex-start;
+   margin-bottom: 0;
+   font-family: Arial;
+   color: var(--aquaPulse);
+}
+
+.customer-highlight-paragraph {
+   font-family: Comfortaa;
+   font-size: 15px;
+   color: var(--aquaPulse);
+}
+
+.rating-star-container {
+   margin-bottom: 10px;
+}
+
+.rating-star {
+   width: 25px;
+}
+
+#community-engagement-header {
+   font-family: Arial;
+   text-align: center;
+   font-size: 20px;
+   color: var(--enduranceWhite);
+}
+
+.community-engagement-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 20px;
+   background: var(--aquaPulse);
+   background: linear-gradient(135deg, var(--aquaPulse), var(--enduranceWhite));
+}
+
+.community-engagement-header {
+   font-family: Arial;
+   text-align: center;
+   font-size: 25px;
+}
+
+.engagement-header {
+   margin-top: 22px;
+   margin-bottom: 0;
+   font-size: 15px;
+   font-family: Comfortaa;
+   text-align: center;
+   color: var(--briskBlue);
+}
+
+.engagement-description-container {
+   margin: 0px 15px 15px 15px;
+}
+
+.engagement-description {
+   font-family: Calibri;
+   text-align: center;
+   color: var(--briskBlue);
+}
+
+.special-event-header {
+   font-family: Arial;
+   font-size: 25px;
+   text-align: center;
+   color: var(--limeLift);
+   box-shadow: 0px 1px 10px -1px var(--limeLift);
+}
+
+.event-description-container {
+   margin: 0px 15px 34px 15px;
+   padding: 2px;
+   text-align: center;
+   box-shadow: 0px 0px 16px -8px var(--limeLift)
+}
+
+.special-event-paragraph {
+   font-family: Calibri;
+   font-size: 20px;
+   color: var(--limeLift);
+}
+
+.text-gradient {
+   background: linear-gradient(135deg, var(--limeLift), var(--enduranceWhite));
+   background-clip: text;
+   -webkit-background-clip: text; /* For WebKit browsers */
+   color: transparent;
+ }
