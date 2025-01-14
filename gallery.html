@@ -27,7 +27,7 @@
                <img class="header-logo" src="/images/logo2.png" alt="ABC Fitness Logo"/>
                
                <div id="btnHamburger-container">
-                  <img id="cart-icon" src="/images/icon-cart-white.svg" alt="shopping cart icon"/>
+                  <img class="cart-icon" src="/images/icon-cart-white.svg" alt="shopping cart icon"/>
                   <a href="#" id="btnHamburger" class="header-menu">
                      <span class="hamburger-menu"></span>
                      <span class="hamburger-menu"></span>
@@ -43,14 +43,31 @@
                <h2 id="gallery-heading">Welcome to our shopping Gallery!</h2>
 
 
-               <div class="cart-inventory">
+               <div class="cart-inventory hidden">
                   <div class="cart-header-container">
                      <p class="cart-header">Cart</p>
                   </div>
-                  <p class="cart-display-empty">Your cart is empty.</p>
+
+
+
+                  <p class="cart-display-empty hidden">Your cart is empty.</p>
+
+
                   <div class="cart-full-container">
-                     <img 
+                     <div class="cart-text-container">
+                        <ol class="cart-display-full">
+                           <li class="product-in-cart">Group Yoga</li>
+                           <li class="product-in-cart">Group Kickboxing</li>
+
+                        </ol>
+
+
+                        <img class="trash-icon" src="/images/icon-delete.svg" alt="button to remove all items from cart"/>
+                     </div>
+                     <button class="checkout-btn button">Checkout</button>
                   </div>
+
+
                </div>
 
 
@@ -71,7 +88,7 @@
                </div>
                <div class="gallery-product gallery-3">
                   <h3 class="gallery-product-title">Group Kickboxing</h3>
-                  <imag class="gallery-product-image" src="/images/Client2_GroupKickboxing.png"/>
+                  <img class="gallery-product-image" src="/images/Client2_GroupKickboxing.png"/>
                   <p class="gallery-product-description">Build explosive power, burn fat, and sharpen your skills in our intense group kickboxing courses!</p>
                   <button class="add-cart-button button" type="button" value="add to cart">Add to Cart</button>
                </div>
