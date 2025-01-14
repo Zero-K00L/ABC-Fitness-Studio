@@ -6,6 +6,8 @@ const fadeElems = document.querySelectorAll('.has-fade');
 const fadeElems2 = document.querySelectorAll('.has-fade2');
 const body = document.querySelector('body');
 
+const cartIcon = document.querySelector('.cart-icon');
+const cartScreen = document.querySelector('.cart-inventory');
 
 
 btnHamburger.addEventListener('click', function() {
