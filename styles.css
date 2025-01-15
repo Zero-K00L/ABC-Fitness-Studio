@@ -69,7 +69,7 @@ nav {
    bottom: 0px;
    left: 0px;
    background-color: var(--briskBlue);
-   z-index: 1;
+   z-index: 2;
 }
 
 .overlay-2 {
@@ -297,7 +297,7 @@ nav {
 #btnHamburger-container {
    display: flex;
    margin-right: 25px;
-   z-index: 1;
+   z-index: 3;
 }
 
 /* span elements that make Hamburger menu */
@@ -519,7 +519,8 @@ nav {
 
 .cart-inventory {
    width: 362px;
-   height: 258px;
+   min-height: 258px;
+   height: auto;
    z-index: 1;
    position: relative;
    background-color: var(--enduranceWhite);
@@ -589,7 +590,7 @@ nav {
 .checkout-btn {
    width: 312px;
    height: 56px;
-   margin-left:25px;
+   margin-bottom: 20px;
    border: none;
    border-radius: 10px;
    font-family: Calibri;
@@ -615,9 +616,6 @@ nav {
 .hidden {
    display: none;
 }
-
-
-
 
 
 #gallery-container {

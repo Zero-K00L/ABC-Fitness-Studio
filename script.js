@@ -1,29 +1,84 @@
 // Mobile Cart
 const cartIconMobile = document.querySelector('.cart-icon');
 const cartScreen = document.querySelector('.cart-inventory');
+const viewCartBtn = document.querySelector('.view-cart-button');
 
-// reveals and hides cart inventory screen when cart icon is pressed
-function revealCart() {
-   if (cartScreen.classList.contains('hidden')) {
-      cartScreen.classList.remove('hidden');
-      document.addEventListener('click', hideCart);
+// Check if the cart elements exist before adding functionality
+if (cartIconMobile && cartScreen && viewCartBtn) {
+    // Function to reveal and hide the cart inventory screen
+   function revealCart() {
+      if (cartScreen.classList.contains('hidden')) {
+         cartScreen.classList.remove('hidden');
+         viewCartBtn.textContent = "Hide Cart";
+         document.addEventListener('click', hideCart);
+      } 
+      else {
+         cartScreen.classList.add('hidden');
+         viewCartBtn.textContent = "View Cart";
+         document.removeEventListener('click', hideCart);
+      }
    }
-   else {
-      cartScreen.classList.add('hidden');
-      document.removeEventListener('click', hideCart);
+
+   function hideCart(event) {
+      if(!cartScreen.contains(event.target) && event.target !=cartIconMobile 
+      && event.target !== cartIconDesktop && event.target !== cartBtn) {
+         cartScreen.classList.add('hidden');
+         document.removeEventListener('click', hideCart);
+      }
    }
+   
+   cartIconMobile.addEventListener('click', revealCart);
+   viewCartBtn.addEventListener('click', revealCart);
 }
 
-function hideCart(event) {
-   if(!cartScreen.contains(event.target) && event.target !=cartIconMobile 
-   && event.target !== cartIconDesktop && event.target !== cartBtn) {
-      cartScreen.classList.add('hidden');
-      document.removeEventListener('click', hideCart);
-   }
-}
+// Add items to the cart
+const addCartButtons = document.querySelectorAll('.add-cart-button');
+const cartList = document.querySelector('.cart-display-full');
+const cartFilled = document.querySelector('.cart-full-container');
+const emptyCartMessage = document.querySelector('.cart-display-empty');
+const trashIcon = document.querySelector('.trash-icon');
 
-cartIconMobile.addEventListener('click', revealCart);
-cartIconDesktop.addEventListener('click', revealCart);
+// Check if cart-related elements exist
+if (cartList && emptyCartMessage && trashIcon && cartFilled) {
+   // Function to add an item to the cart
+   function addToCart(event) {
+      const productContainer = event.target.closest('.gallery-product');
+      const productName = productContainer.querySelector('.gallery-product-title').textContent;
+      const cartItems = cartList.querySelectorAll('.product-in-cart');
+      const itemExists = Array.from(cartItems).some(item => item.textContent === productName);
+
+      if (!itemExists) {
+         const cartItem = document.createElement('li');
+         cartItem.className = 'product-in-cart';
+         cartItem.textContent = productName;
+         cartList.appendChild(cartItem);
+         cartList.classList.remove('hidden');
+         cartFilled.classList.remove('hidden');
+         emptyCartMessage.classList.add('hidden');
+
+         // Displays alert after item added to the cart
+         alert("Item added.");
+      } 
+      else {
+         alert(`${productName} is already in the cart.`);
+      }
+    }
+
+   // Function to clear the cart
+   function clearCart() {
+      cartList.innerHTML = '';
+      emptyCartMessage.classList.remove('hidden');
+      cartFilled.classList.add('hidden');
+   }
+
+   // Attach event listeners to "Add to Cart" buttons
+   addCartButtons.forEach(button => {
+      button.addEventListener('click', addToCart);
+   });
+
+   // Attach event listener to the trash icon
+   trashIcon.addEventListener('click', clearCart);
+}
 
 // Mobile Hamburger Menu
 const btnHamburger = document.querySelector('#btnHamburger');
@@ -33,39 +88,54 @@ const fadeElems = document.querySelectorAll('.has-fade');
 const fadeElems2 = document.querySelectorAll('.has-fade2');
 const body = document.querySelector('body');
 
-btnHamburger.addEventListener('click', function() {
-   if(btnHamburger.classList.contains('header-open')) {    // close Hamburger menu 
-      btnHamburger.classList.remove('header-open');
-      fadeElems.forEach(function(element){
-         element.classList.remove('fade-in');
-         element.classList.add('fade-out');
-       });
-      fadeElems2.forEach(function(element){
-         element.classList.remove('fade-in2');
-         element.classList.add('fade-out2');
-      });
-      body.classList.remove('no-scroll');
-   }
-   else {                                                // open Hamburger menu
-      btnHamburger.classList.add('header-open');
-      overlayAnim.classList.add('overlay');
-      overlayAnim2.classList.add('overlay-2');
-      fadeElems.forEach(function(element){
-         element.classList.remove('fade-out');
-         element.classList.add('fade-in');
-       });
-      fadeElems2.forEach(function(element){
-         element.classList.remove('fade-out2');
-         element.classList.add('fade-in2');
-      });
-      body.classList.add('no-scroll');
-   }
-});
+// Check if hamburger menu elements exist
+if (btnHamburger && overlayAnim && overlayAnim2) {
+    btnHamburger.addEventListener('click', function () {
+        if (btnHamburger.classList.contains('header-open')) {
+            // Close Hamburger menu
+            btnHamburger.classList.remove('header-open');
+            body.classList.remove('no-scroll');
 
-// Add sliding effect to hamburger menu components when the menu is opened
+            fadeElems.forEach(element => {
+                element.classList.remove('fade-in');
+                element.classList.add('fade-out');
+            });
+            fadeElems2.forEach(element => {
+                element.classList.remove('fade-in2');
+                element.classList.add('fade-out2');
+            });
+        } else {
+            // Open Hamburger menu
+            btnHamburger.classList.add('header-open');
+            body.classList.add('no-scroll');
 
-btnHamburger.addEventListener("click", function() {
-   overlayAnim.classList.toggle("open");
-   overlayAnim2.classList.toggle("open");
-});
+            fadeElems.forEach(element => {
+                element.classList.remove('fade-out');
+                element.classList.add('fade-in');
+            });
+            fadeElems2.forEach(element => {
+                element.classList.remove('fade-out2');
+                element.classList.add('fade-in2');
+            });
+        }
+    });
 
+    // Add sliding effect to hamburger menu components when the menu is opened
+    btnHamburger.addEventListener("click", function () {
+        overlayAnim.classList.toggle("open");
+        overlayAnim2.classList.toggle("open");
+    });
+} else {
+    console.warn('Hamburger menu elements are missing on this page.');
+}
+
+
+// Process order button message
+const processOrderButton = document.querySelector('.checkout-btn');
+
+// Add a click event listener to the button
+if (processOrderButton) {
+    processOrderButton.addEventListener('click', function () {
+        alert('Thank you for your order!');
+    });
+}
