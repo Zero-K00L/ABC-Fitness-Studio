@@ -610,13 +610,11 @@ nav {
    display: none;
 }
 
-
 /* Helper Classes */
 
 .hidden {
    display: none;
 }
-
 
 #gallery-container {
    margin-top: 36px;
@@ -797,6 +795,14 @@ nav {
    box-shadow: 0px 1px 4px -2px var(--enduranceWhite);
 }
 
+#success-message {
+   color: var(--enduranceWhite);
+   font-family: Arial;
+   font-size: 20px;
+   text-align: center;
+   margin-top: 15px;
+}
+
 #customer-highlights-header {
    text-align: center;
    color: var(--enduranceWhite);
@@ -918,3 +924,22 @@ nav {
    -webkit-background-clip: text; /* For WebKit browsers */
    color: transparent;
  }
+
+
+
+ /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+   .header-logo {
+      width: 5%;
+      margin-left: 96px;
+   }
+   
+   
+
+
+
+
+
+
+}

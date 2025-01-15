@@ -139,3 +139,64 @@ if (processOrderButton) {
         alert('Thank you for your order!');
     });
 }
+
+
+// Web storage and validation
+
+// Select form elements
+const contactForm = document.getElementById('contact-form');
+const successMessage = document.getElementById('success-message');
+
+// Event listener for form submission
+contactForm.addEventListener('submit', function (event) {
+   event.preventDefault(); // Prevent default form submission behavior
+
+   // Capture form data
+   const name = document.getElementById('name').value.trim();
+   const phone = document.getElementById('phone').value.trim();
+   const email = document.getElementById('email').value.trim();
+   const message = document.getElementById('message').value.trim();
+
+   // Validate input
+   if (!name || !phone || !email || !message) {
+      alert('Please fill out all fields correctly.');
+      return;
+   }
+
+   if (!validateEmail(email)) {
+      alert('Please enter a valid email address.');
+      return;
+   }
+
+   // Store data in web storage (localStorage or sessionStorage)
+   const formData = {
+      name,
+      phone,
+      email,
+      message,
+   };
+
+   // Save to localStorage
+   localStorage.setItem('contactFormData', JSON.stringify(formData));
+
+   // Provide user feedback
+   successMessage.textContent = 'Form data saved successfully!';
+   successMessage.classList.remove('hidden');
+
+   // Optionally clear the form
+   contactForm.reset();
+});
+
+// Function to validate email format
+function validateEmail(email) {
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   return emailRegex.test(email);
+}
+
+// Retrieve stored data (Optional: for debug or summary display)
+function getStoredFormData() {
+   const storedData = localStorage.getItem('contactFormData');
+   return storedData ? JSON.parse(storedData) : null;
+}
+
+
