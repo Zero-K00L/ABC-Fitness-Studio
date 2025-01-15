@@ -115,9 +115,6 @@ nav {
    transform: translateX(-100%);
 }
 
-
-
-
 /* animations for Hamburger menu overlay */
 
 @keyframes fade-in {
@@ -207,18 +204,6 @@ nav {
    visibility: hidden;
 }
 
-
-
-.header-menu {
-/*    height: 1.1875rem;
-   margin-left: 85%;
-   padding-right: 0;
-   position: fixed;
-   left: 8px;
-   top: 27px;
-   z-index: 1; */
-}
-
 .header-display {
    display: flex;
    flex-direction: column;
@@ -235,22 +220,6 @@ nav {
    font-family: Calibri;
    margin-bottom: 31px;
    font-size: 20px;
-}
-
-.home-mobile-header {
-
-}
-
-.gallery-mobile-header {
-
-}
-
-.aboutUs-mobile-header {
-
-}
-
-.community-mobile-header {
-
 }
 
 .no-scroll {
@@ -292,6 +261,10 @@ nav {
 .header-logo {
    width: 13%;
    margin-left: 25px;
+}
+
+#desktop-nav-links {
+   display: none;
 }
 
 #btnHamburger-container {
@@ -935,11 +908,80 @@ nav {
       margin-left: 96px;
    }
    
+   #btnHamburger-container {
+      display: none;
+   }
+
+   #desktop-nav-links {
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+      margin-right: 92px;
+   }
+
+   .desktop-link {
+      color: var(--enduranceWhite);    
+      font-family: Arial;
+      font-size: 23px;
+      cursor: pointer;
+      text-decoration: none;
+   }
+
+   .desktop-link:hover {
+      color: var(--limeLift);
+   }
    
+   #page-title {
+      font-size: 50px;
+   }
 
+   #hero-section {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+   }
 
+   #hero-img {
+      width: 64%;
+   }
 
+   #promotions-header {
+      font-size: 45px;
+   }
 
+   #promotions-paragraph {
+      font-size: 32px;
+   }
+
+   .promotion-container {
+      width: 240px;
+      height: 240px;
+   }
+
+   .promotion-window-container {
+      justify-content: space-around;
+   }
+
+   .promo-text {
+      font-size: 27px;
+   }
+
+   .training-header {
+      font-size: 36px;
+   }
+
+   .reason {
+      margin-bottom: 30px;
+      font-size: 30px;
+   }
+
+   .promotional-images-container {
+      display: flex;
+   }
+
+   .promotional-image {
+      width: 85%;
+   }
 
 
 }
