@@ -3,6 +3,8 @@ const cartIconMobile = document.querySelector('.cart-icon');
 const cartScreen = document.querySelector('.cart-inventory');
 const viewCartBtn = document.querySelector('.view-cart-button');
 
+const cartIconDesktop = document.querySelector('.cart-icon-desktop');
+
 // Check if the cart elements exist before adding functionality
 if (cartIconMobile && cartScreen && viewCartBtn) {
     // Function to reveal and hide the cart inventory screen
@@ -29,6 +31,7 @@ if (cartIconMobile && cartScreen && viewCartBtn) {
    
    cartIconMobile.addEventListener('click', revealCart);
    viewCartBtn.addEventListener('click', revealCart);
+   cartIconDesktop.addEventListener('click', revealCart);
 }
 
 // Add items to the cart
@@ -129,7 +132,6 @@ if (btnHamburger && overlayAnim && overlayAnim2) {
     console.warn('Hamburger menu elements are missing on this page.');
 }
 
-
 // Process order button message
 const processOrderButton = document.querySelector('.checkout-btn');
 
@@ -139,7 +141,6 @@ if (processOrderButton) {
         alert('Thank you for your order!');
     });
 }
-
 
 // Web storage and validation
 
@@ -196,7 +197,6 @@ function validateEmail(email) {
 // Retrieve stored data (Optional: for debug or summary display)
 function getStoredFormData() {
    const storedData = localStorage.getItem('contactFormData');
-   return storedData ? JSON.parse(storedData) : null;
+    return storedData ? JSON.parse(storedData) : null;
 }
-
 

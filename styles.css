@@ -983,5 +983,41 @@ nav {
       width: 85%;
    }
 
+   /* Gallery Desktop Styles */
+
+   #gallery-heading {
+      font-size: 25px;
+   }
+
+   #gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      grid-gap: 20px;
+      padding: 20px;
+   }
+
+   .gallery-product {
+      min-height: 448px;
+      height: auto;
+   }
+
+   .gallery-1 {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+   }
+   
+   .gallery-9 {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+   }
+
+   .cart-inventory {
+      width: 80%;
+   }
+
+   .cart-icon-desktop {
+      margin-right: 26px;
+      cursor: pointer;
+   }
 
 }
