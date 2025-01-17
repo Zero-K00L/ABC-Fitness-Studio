@@ -5,6 +5,7 @@
    --aquaPulse: #91B9D2;
    --limeLift: #DEF479;
    --enduranceWhite: #FCFCFC;
+   --crimsonBloom: #AC1724;
 }
 
 html {
@@ -53,6 +54,10 @@ nav {
    font-weight: 700;
    text-align: center;
    color: var(--enduranceWhite);
+}
+
+.title-highlight {
+   color: var(--crimsonBloom);
 }
 
 /* overlay for hamburger menu */
@@ -922,7 +927,7 @@ nav {
    #desktop-nav-links {
       display: flex;
       justify-content: space-between;
-      width: 30%;
+      width: 52%;
       margin-right: 92px;
    }
 
