@@ -7,7 +7,6 @@
    --enduranceWhite: #FCFCFC;
 }
 
-
 html {
    font-size: 100%;
    box-sizing: border-box;
@@ -350,7 +349,6 @@ nav {
 }
 
 .promo-3 {
-
    background: linear-gradient(to left, var(--aquaPulse), var(--briskBlue), var(--limeLift));
 }
 
@@ -417,6 +415,11 @@ nav {
    margin-top: 28px;
    padding-top: 1px;
    background: linear-gradient(to right, var(--briskBlue), var(--aquaPulse));
+   background: linear-gradient(to right, var(--briskBlue), var(--aquaPulse));
+}
+
+.desktop-footer-container {
+   display: none;
 }
 
 .subscribe-header {
@@ -558,6 +561,7 @@ nav {
    height: 20px;
    cursor: pointer;
    margin-right: 16px;
+   border: var(--briskBlue);
 }
 
 .checkout-btn {
@@ -782,6 +786,10 @@ nav {
    font-family: Arial;
 }
 
+.desktop-highlight-header {
+   display: none;
+}
+
 .customer-highlight-container {
    display: flex;
    flex-direction: column;
@@ -897,7 +905,6 @@ nav {
    -webkit-background-clip: text; /* For WebKit browsers */
    color: transparent;
  }
-
 
 
  /* Large devices (laptops/desktops, 992px and up) */
@@ -1020,4 +1027,96 @@ nav {
       cursor: pointer;
    }
 
+   /* About Us Desktop Styles */
+
+   #aboutUs-description {
+      font-size: 25px;
+   }
+
+   #operations-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   #operations-table {
+      width: 60%;
+   }
+
+   td, th {
+      font-size: 25px;
+   }
+
+   #contact-form {
+      width: 40%;
+   }
+
+   #email-input {
+      width: 39%;
+   }
+
+   #subscribe-button {
+      width: 39%;
+   }
+
+   #social-container {
+      width: 48%;
+   }
+
+   /* Desktop Community */
+   #customer-highlights {
+      display: flex;
+      margin-top: 89px;      
+   }
+
+   .mobile-highlight-header {
+      display: none;
+   }
+
+   .desktop-highlight-header {
+      display: block;
+      margin-bottom: 0;
+      text-align: center;
+      font-family: Arial;
+      font-size: 35px;
+      color: var(--enduranceWhite);
+   }
+
+   #community-engagement-header {
+      margin-top: 72px;
+      font-size: 35px;
+   }
+
+   .engagement-header {
+      font-size: 20px;
+   }
+
+   .engagement-description {
+      font-size: 20px;
+   }
+
+   #special-events-section {
+      margin-top: 30px;
+   }
+
+   .special-event-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;     
+   }
+
+   .special-event-header {
+      padding: 11px;
+      font-size: 35px;
+   }
+
+   .event-description-container {
+      width: 50%;
+   }
+
+   .special-event-paragraph {
+      font-size: 25px;
+   }
 }
