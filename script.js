@@ -1,87 +1,120 @@
-// Mobile Cart
-const cartIconMobile = document.querySelector('.cart-icon');
-const cartScreen = document.querySelector('.cart-inventory');
-const viewCartBtn = document.querySelector('.view-cart-button');
-
-const cartIconDesktop = document.querySelector('.cart-icon-desktop');
-
-// Check if the cart elements exist before adding functionality
-if (cartIconMobile && cartScreen && viewCartBtn) {
-    // Function to reveal and hide the cart inventory screen
-   function revealCart() {
-      if (cartScreen.classList.contains('hidden')) {
-         cartScreen.classList.remove('hidden');
-         viewCartBtn.textContent = "Hide Cart";
-         document.addEventListener('click', hideCart);
-      } 
-      else {
-         cartScreen.classList.add('hidden');
-         viewCartBtn.textContent = "View Cart";
-         document.removeEventListener('click', hideCart);
-      }
-   }
-
-   function hideCart(event) {
-      if(!cartScreen.contains(event.target) && event.target !=cartIconMobile 
-      && event.target !== cartIconDesktop && event.target !== cartBtn) {
-         cartScreen.classList.add('hidden');
-         document.removeEventListener('click', hideCart);
-      }
-   }
-   
-   cartIconMobile.addEventListener('click', revealCart);
-   viewCartBtn.addEventListener('click', revealCart);
-   cartIconDesktop.addEventListener('click', revealCart);
-}
-
 // Add items to the cart
 const addCartButtons = document.querySelectorAll('.add-cart-button');
 const cartList = document.querySelector('.cart-display-full');
 const cartFilled = document.querySelector('.cart-full-container');
 const emptyCartMessage = document.querySelector('.cart-display-empty');
 const trashIcon = document.querySelector('.trash-icon');
+const cartIconMobile = document.querySelector('.cart-icon');
+const cartScreen = document.querySelector('.cart-inventory');
+const viewCartBtn = document.querySelector('.view-cart-button');
+const cartIconDesktop = document.querySelector('.cart-icon-desktop');
+
+// Function to save the cart to sessionStorage
+function saveCartToSessionStorage() {
+    const cartItems = Array.from(cartList.querySelectorAll('.product-in-cart')).map(item => item.textContent);
+    sessionStorage.setItem('cart', JSON.stringify(cartItems));
+}
+
+// Function to load the cart from sessionStorage
+function loadCartFromSessionStorage() {
+    const storedCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    storedCart.forEach(productName => {
+        const cartItem = document.createElement('li');
+        cartItem.className = 'product-in-cart';
+        cartItem.textContent = productName;
+        cartList.appendChild(cartItem);
+    });
+
+    if (storedCart.length > 0) {
+        cartList.classList.remove('hidden');
+        cartFilled.classList.remove('hidden');
+        emptyCartMessage.classList.add('hidden');
+    }
+}
 
 // Check if cart-related elements exist
 if (cartList && emptyCartMessage && trashIcon && cartFilled) {
-   // Function to add an item to the cart
-   function addToCart(event) {
-      const productContainer = event.target.closest('.gallery-product');
-      const productName = productContainer.querySelector('.gallery-product-title').textContent;
-      const cartItems = cartList.querySelectorAll('.product-in-cart');
-      const itemExists = Array.from(cartItems).some(item => item.textContent === productName);
+    // Load the cart from sessionStorage on page load
+    loadCartFromSessionStorage();
 
-      if (!itemExists) {
-         const cartItem = document.createElement('li');
-         cartItem.className = 'product-in-cart';
-         cartItem.textContent = productName;
-         cartList.appendChild(cartItem);
-         cartList.classList.remove('hidden');
-         cartFilled.classList.remove('hidden');
-         emptyCartMessage.classList.add('hidden');
+    // Function to add an item to the cart
+    function addToCart(event) {
+        const productContainer = event.target.closest('.gallery-product');
+        const productName = productContainer.querySelector('.gallery-product-title').textContent;
+        const cartItems = cartList.querySelectorAll('.product-in-cart');
+        const itemExists = Array.from(cartItems).some(item => item.textContent === productName);
 
-         // Displays alert after item added to the cart
-         alert("Item added.");
-      } 
-      else {
-         alert(`${productName} is already in the cart.`);
-      }
-   }
+        if (!itemExists) {
+            const cartItem = document.createElement('li');
+            cartItem.className = 'product-in-cart';
+            cartItem.textContent = productName;
+            cartList.appendChild(cartItem);
+            cartList.classList.remove('hidden');
+            cartFilled.classList.remove('hidden');
+            emptyCartMessage.classList.add('hidden');
 
-   // Function to clear the cart
-   function clearCart() {
-      cartList.innerHTML = '';
-      emptyCartMessage.classList.remove('hidden');
-      cartFilled.classList.add('hidden');
-   }
+            // Save to sessionStorage
+            saveCartToSessionStorage();
 
-   // Attach event listeners to "Add to Cart" buttons
-   addCartButtons.forEach(button => {
-      button.addEventListener('click', addToCart);
-   });
+            alert("Item added.");
+        } else {
+            alert(`${productName} is already in the cart.`);
+        }
+    }
 
-   // Attach event listener to the trash icon
-   trashIcon.addEventListener('click', clearCart);
+    // Function to clear the cart
+    function clearCart() {
+        cartList.innerHTML = '';
+        emptyCartMessage.classList.remove('hidden');
+        cartFilled.classList.add('hidden');
+
+        // Clear sessionStorage
+        sessionStorage.removeItem('cart');
+    }
+
+    // Attach event listeners to "Add to Cart" buttons
+    addCartButtons.forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+
+    // Attach event listener to the trash icon
+    trashIcon.addEventListener('click', clearCart);
 }
+
+// Check if the cart elements exist before adding functionality
+if (cartIconMobile && cartScreen && viewCartBtn) {
+    // Function to reveal and hide the cart inventory screen
+    function revealCart() {
+        if (cartScreen.classList.contains('hidden')) {
+            cartScreen.classList.remove('hidden');
+            viewCartBtn.textContent = "Hide Cart";
+            document.addEventListener('click', hideCart);
+        } else {
+            cartScreen.classList.add('hidden');
+            viewCartBtn.textContent = "View Cart";
+            document.removeEventListener('click', hideCart);
+        }
+    }
+
+    function hideCart(event) {
+        if (
+            !cartScreen.contains(event.target) &&
+            event.target !== cartIconMobile &&
+            event.target !== cartIconDesktop &&
+            event.target !== viewCartBtn
+        ) {
+            cartScreen.classList.add('hidden');
+            document.removeEventListener('click', hideCart);
+        }
+    }
+
+    cartIconMobile.addEventListener('click', revealCart);
+    viewCartBtn.addEventListener('click', revealCart);
+    cartIconDesktop.addEventListener('click', revealCart);
+}
+
+
+
 
 // Mobile Hamburger Menu
 const btnHamburger = document.querySelector('#btnHamburger');
