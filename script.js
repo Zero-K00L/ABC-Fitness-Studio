@@ -65,7 +65,7 @@ if (cartList && emptyCartMessage && trashIcon && cartFilled) {
       else {
          alert(`${productName} is already in the cart.`);
       }
-    }
+   }
 
    // Function to clear the cart
    function clearCart() {
@@ -93,43 +93,45 @@ const body = document.querySelector('body');
 
 // Check if hamburger menu elements exist
 if (btnHamburger && overlayAnim && overlayAnim2) {
-    btnHamburger.addEventListener('click', function () {
-        if (btnHamburger.classList.contains('header-open')) {
-            // Close Hamburger menu
-            btnHamburger.classList.remove('header-open');
-            body.classList.remove('no-scroll');
+   btnHamburger.addEventListener('click', function () {
+      if (btnHamburger.classList.contains('header-open')) {
+         // Close Hamburger menu
+         btnHamburger.classList.remove('header-open');
+         body.classList.remove('no-scroll');
 
-            fadeElems.forEach(element => {
-                element.classList.remove('fade-in');
-                element.classList.add('fade-out');
-            });
-            fadeElems2.forEach(element => {
-                element.classList.remove('fade-in2');
-                element.classList.add('fade-out2');
-            });
-        } else {
-            // Open Hamburger menu
-            btnHamburger.classList.add('header-open');
-            body.classList.add('no-scroll');
+         fadeElems.forEach(element => {
+            element.classList.remove('fade-in');
+            element.classList.add('fade-out');
+         });
+         fadeElems2.forEach(element => {
+            element.classList.remove('fade-in2');
+            element.classList.add('fade-out2');
+         });
+      } 
+      else {
+         // Open Hamburger menu
+         btnHamburger.classList.add('header-open');
+         body.classList.add('no-scroll');
 
-            fadeElems.forEach(element => {
-                element.classList.remove('fade-out');
-                element.classList.add('fade-in');
-            });
-            fadeElems2.forEach(element => {
-                element.classList.remove('fade-out2');
-                element.classList.add('fade-in2');
-            });
-        }
-    });
+         fadeElems.forEach(element => {
+            element.classList.remove('fade-out');
+            element.classList.add('fade-in');
+         });
+         fadeElems2.forEach(element => {
+            element.classList.remove('fade-out2');
+            element.classList.add('fade-in2');
+         });
+      }
+   });
 
-    // Add sliding effect to hamburger menu components when the menu is opened
-    btnHamburger.addEventListener("click", function () {
-        overlayAnim.classList.toggle("open");
-        overlayAnim2.classList.toggle("open");
-    });
-} else {
-    console.warn('Hamburger menu elements are missing on this page.');
+   // Add sliding effect to hamburger menu components when the menu is opened
+   btnHamburger.addEventListener("click", function () {
+      overlayAnim.classList.toggle("open");
+      overlayAnim2.classList.toggle("open");
+   });
+} 
+else {
+   console.warn('Hamburger menu elements are missing on this page.');
 }
 
 // Process order button message
@@ -137,9 +139,9 @@ const processOrderButton = document.querySelector('.checkout-btn');
 
 // Add a click event listener to the button
 if (processOrderButton) {
-    processOrderButton.addEventListener('click', function () {
-        alert('Thank you for your order!');
-    });
+   processOrderButton.addEventListener('click', function () {
+      alert('Thank you for your order!');
+   });
 }
 
 // Web storage and validation
@@ -149,54 +151,97 @@ const contactForm = document.getElementById('contact-form');
 const successMessage = document.getElementById('success-message');
 
 // Event listener for form submission
-contactForm.addEventListener('submit', function (event) {
-   event.preventDefault(); // Prevent default form submission behavior
-
-   // Capture form data
-   const name = document.getElementById('name').value.trim();
-   const phone = document.getElementById('phone').value.trim();
-   const email = document.getElementById('email').value.trim();
-   const message = document.getElementById('message').value.trim();
-
-   // Validate input
-   if (!name || !phone || !email || !message) {
-      alert('Please fill out all fields correctly.');
-      return;
+if (contactForm) {
+   contactForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission behavior
+   
+      // Capture form data
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+   
+      // Validate input
+      if (!name || !phone || !email || !message) {
+         alert('Please fill out all fields correctly.');
+         return;
+      }
+   
+      if (!validateEmail(email)) {
+         alert('Please enter a valid email address.');
+         return;
+      }
+   
+      // Store data in web storage (localStorage or sessionStorage)
+      const formData = {
+         name,
+         phone,
+         email,
+         message,
+      };
+   
+      // Save to localStorage
+      localStorage.setItem('contactFormData', JSON.stringify(formData));
+   
+      // Provide user feedback
+      successMessage.textContent = 'Form data saved successfully!';
+      successMessage.classList.remove('hidden');
+   
+      // Optionally clear the form
+      contactForm.reset();
+   });
+   
+   // Function to validate email format
+   function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
    }
-
-   if (!validateEmail(email)) {
-      alert('Please enter a valid email address.');
-      return;
+   
+   // Retrieve stored data (Optional: for debug or summary display)
+   function getStoredFormData() {
+      const storedData = localStorage.getItem('contactFormData');
+      return storedData ? JSON.parse(storedData) : null;
    }
-
-   // Store data in web storage (localStorage or sessionStorage)
-   const formData = {
-      name,
-      phone,
-      email,
-      message,
-   };
-
-   // Save to localStorage
-   localStorage.setItem('contactFormData', JSON.stringify(formData));
-
-   // Provide user feedback
-   successMessage.textContent = 'Form data saved successfully!';
-   successMessage.classList.remove('hidden');
-
-   // Optionally clear the form
-   contactForm.reset();
-});
-
-// Function to validate email format
-function validateEmail(email) {
-   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   return emailRegex.test(email);
 }
 
-// Retrieve stored data (Optional: for debug or summary display)
-function getStoredFormData() {
-   const storedData = localStorage.getItem('contactFormData');
-    return storedData ? JSON.parse(storedData) : null;
+
+
+// Footer Newsletter Subscription Validation
+const emailInput = document.getElementById('email-input');
+const subscribeButton = document.getElementById('subscribe-button');
+const messageBox = document.getElementById('email-validation-message');
+
+// Ensure the footer elements exist before adding event listeners
+if (emailInput && subscribeButton && messageBox) {
+   subscribeButton.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default form submission behavior
+      messageBox.style.display = 'none'; // Hide any previous messages
+
+      // Check for validity using HTML5 validation
+      if (!emailInput.validity.valid) {
+         messageBox.style.display = 'block';
+         if (emailInput.validity.valueMissing) {
+            // Field is empty
+            messageBox.textContent = 'Please fill out the email field.';
+         } 
+         else if (emailInput.validity.typeMismatch) {
+            // Invalid email format
+            messageBox.textContent = 'Please enter a valid email address.';
+         }
+      } 
+      else {
+         // Email is valid
+         messageBox.textContent = 'Thank you for subscribing!';
+         messageBox.style.color = 'var(--enduranceWhite)'; // Set color for success
+         messageBox.style.display = 'block'; // Ensure the message is shown
+
+         // Clear input and hide message after 3 seconds
+         emailInput.value = '';
+         setTimeout(() => {
+            messageBox.style.display = 'none';
+            messageBox.style.color = 'var(--enduranceWhite)'; // Reset color for error messages
+         }, 3000);
+      }
+   });
 }
 
