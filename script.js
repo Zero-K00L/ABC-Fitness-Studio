@@ -56,7 +56,7 @@ if (cartList && emptyCartMessage && trashIcon && cartFilled) {
          // Save to sessionStorage
          saveCartToSessionStorage();
 
-         alert("Item added.");
+         alert(`Item added to the cart: ${productName}`);
       } 
       else {
          alert(`${productName} is already in the cart.`);
@@ -90,34 +90,19 @@ if (cartIconMobile && cartScreen && viewCartBtn) {
       if (cartScreen.classList.contains('hidden')) {
          cartScreen.classList.remove('hidden');
          viewCartBtn.textContent = "Hide Cart";
-         document.addEventListener('click', hideCart);
       } 
       else {
          cartScreen.classList.add('hidden');
          viewCartBtn.textContent = "View Cart";
-         document.removeEventListener('click', hideCart);
       }
    }
 
-   function hideCart(event) {
-      if (
-         !cartScreen.contains(event.target) &&
-         event.target !== cartIconMobile &&
-         event.target !== cartIconDesktop &&
-         event.target !== viewCartBtn &&
-         !event.target.classList.contains('add-cart-button') // Prevent hiding when clicking "Add to Cart"
-      ) {
-         cartScreen.classList.add('hidden');
-         document.removeEventListener('click', hideCart);
-      }
-   }
 
+   // Attach event listeners to cart icons and view cart button
    cartIconMobile.addEventListener('click', revealCart);
    viewCartBtn.addEventListener('click', revealCart);
    cartIconDesktop.addEventListener('click', revealCart);
 }
-
-
 
 
 // Mobile Hamburger Menu
