@@ -552,7 +552,7 @@ nav {
 }
 
 .product-in-cart {
-   list-style-type: none;
+   list-style-type: disc;
    font-family: Arial;
 }
 
