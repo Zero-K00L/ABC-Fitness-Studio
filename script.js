@@ -200,7 +200,7 @@ if (contactForm) {
          return;
       }
    
-      // Store data in web storage (localStorage or sessionStorage)
+      // Store data in web storage 
       const formData = {
          name,
          phone,
@@ -213,6 +213,7 @@ if (contactForm) {
    
       // Provide user feedback
       successMessage.textContent = 'Form data saved successfully!';
+      alert(`Thank you for your feedback ${name}!`);
       successMessage.classList.remove('hidden');
    
       // Optionally clear the form
